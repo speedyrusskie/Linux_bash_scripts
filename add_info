@@ -1,0 +1,23 @@
+while read -n1 -r -p "choose [y]es [n]o"; do
+	case $REPLY in
+		y) break;;
+		n) read -p "Enter a first name: " firstname
+		   read -p "Enter a last name: " lastname
+		   read -p "Enter an email: " email
+		   read -p "Enter a cell phone: " cellphone
+		   read -p "Enter a home phone: " homephone
+		   echo "$firstname", "$lastname", "$email", "$cellphone", "$homephone" > phonebook		   
+		   read "Do you want to continue? [Y]/[N]: "
+			
+				case $REPLY in
+					Y)  n
+					;;
+					N) break
+					;;
+					*) echo "invalid option";;
+			   		esac
+					;;
+		*) echo "Not a valid option";;
+	esac
+
+done
