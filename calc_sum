@@ -1,0 +1,40 @@
+#!
+# read four numbers and find the sum. assign conditionals based on sum
+
+echo "Enter size(N)"
+read N
+
+sum = 0
+
+echo "Enter Numbers"
+for ((i=1;i<=N;i++))
+do
+	read num
+	sum=$((sum + num))
+done
+
+if [ $sum >= 150 ]
+then
+	echo "The sum is more than 150"
+	echo $num, $sum
+
+elif [ 99 >= $sum >= 50  ]
+then
+	echo "The sum is between 50 and 99"
+	echo $i, $i+1
+
+elif [ 149 >= $sum >= 100 ]
+then
+	echo "The sum is between 100 and 149"
+	echo $i, $i+1, $i+2
+
+else
+	echo "The sum is not in any expected range"
+fi
+
+read -p "Would you like to continue?" -n 1 -r
+if [[ $REPLY =~ ^[Nn]$ ]]
+then 
+	echo "Thanks for entering your values"
+	exit 1
+fi
