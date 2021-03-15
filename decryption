@@ -1,0 +1,15 @@
+file=$1
+echo -n "Enter a file name : "
+read file
+
+if [ ! -f $file ]
+then
+	echo "$file is not a file!"
+	exit 1
+fi
+
+echo -n "Enter a password : "
+read password
+
+gpg $file
+echo "$file has been decrupted!"
